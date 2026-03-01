@@ -288,7 +288,7 @@ a {
   padding: var(--space) 0;
 }
 
-.section p:not(.section-label) {
+.section p:not(.section-label):not(.gold-text) {
   color: hsl(220 10% 55%);
   font-size: 1rem;
   line-height: 1.7;
@@ -370,6 +370,9 @@ a {
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1;
+  font-style: italic;
+  font-weight: 600;
+  display: inline-block;
 }
 
 .step-copy {
