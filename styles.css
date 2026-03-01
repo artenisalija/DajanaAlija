@@ -17,6 +17,14 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+b,
+strong {
+  font-weight: bolder;
 }
 
 html {
@@ -280,6 +288,12 @@ a {
   padding: var(--space) 0;
 }
 
+.section p:not(.section-label) {
+  color: hsl(220 10% 55%);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
 .services-grid {
   margin-top: 2rem;
   display: grid;
@@ -331,7 +345,6 @@ a {
 }
 
 .service-card p {
-  color: var(--muted);
   margin-bottom: 0;
 }
 
@@ -360,10 +373,8 @@ a {
 }
 
 .step-copy {
-  color: var(--muted);
+  color: hsl(220 10% 55%);
   margin: 0;
-  font-size: 0.96rem;
-  line-height: 1.65;
 }
 
 .about-grid {
@@ -374,7 +385,11 @@ a {
 }
 
 .about-copy p:not(.section-label) {
-  color: var(--muted);
+  color: hsl(220 10% 55%);
+}
+
+.about-copy strong {
+  color: #e5e7eb;
 }
 
 .portrait-wrap {
@@ -412,7 +427,6 @@ a {
 }
 
 .contact-inner > p:not(.section-label) {
-  color: var(--muted);
   max-width: 60ch;
   margin: 0 auto 1.2rem;
 }
