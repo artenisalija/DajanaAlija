@@ -1,0 +1,14 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local reports/logs
+*.log
+lighthouse-report*.html
+
+# Raw source media (not used by production site)
+dajana/
+

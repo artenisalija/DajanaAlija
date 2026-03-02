@@ -391,7 +391,7 @@ a {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: clamp(1.5rem, 4vw, 4rem);
-  align-items: start;
+  align-items: stretch;
 }
 
 .about-copy p:not(.section-label) {
@@ -404,8 +404,10 @@ a {
 
 .portrait-wrap {
   position: relative;
-  max-width: 470px;
+  max-width: 100%;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  height: 100%;
 }
 
 .portrait-wrap::before {
@@ -418,7 +420,7 @@ a {
 
 .portrait-wrap img {
   width: 100%;
-  min-height: 420px;
+  height: 100%;
   object-fit: cover;
   display: block;
   border: 1px solid var(--line);
