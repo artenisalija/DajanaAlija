@@ -248,9 +248,16 @@ a {
   isolation: isolate;
   display: flex;
   align-items: center;
-  background-image: url("dajana/IMG_8706.JPG.jpeg");
-  background-size: cover;
-  background-position: center top;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: -2;
 }
 
 .hero-overlay {
@@ -537,7 +544,11 @@ a {
   }
 
   .hero {
-    background-position: 58% top;
+    min-height: 92svh;
+  }
+
+  .hero-bg {
+    object-position: 58% top;
   }
 
   .contact-actions {

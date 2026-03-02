@@ -26,6 +26,13 @@
       content="Brand and marketing strategy for founders and CEOs."
     />
     <meta name="twitter:image" content="https://dajanahoti.com/assets/favicon.png" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/hero-8706.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link
       rel="shortcut icon"
@@ -42,7 +49,15 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600;1,700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600;1,700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -92,8 +107,10 @@
         <a href="#top" class="logo">
           <img
             class="logo-primary"
-            src="dajana/D.H._Primary%20Logo-02.png"
+            src="assets/logo-primary.png"
             alt="Dajana Hoti logo"
+            width="600"
+            height="200"
           />
         </a>
 
@@ -114,6 +131,17 @@
 
     <main id="top">
       <section class="hero">
+        <img
+          class="hero-bg"
+          src="assets/hero-8706.webp"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          width="1920"
+          height="2353"
+        />
         <div class="hero-overlay"></div>
         <div class="container hero-content">
           <p class="section-label">Brand Strategy & Social Media</p>
@@ -319,8 +347,12 @@
           </div>
           <div class="portrait-wrap">
             <img
-              src="dajana/IMG_8703.JPG.jpeg"
+              src="assets/about-8703.webp"
               alt="Portrait of Dajana Hoti"
+              loading="lazy"
+              decoding="async"
+              width="1000"
+              height="1235"
             />
           </div>
         </div>
@@ -380,8 +412,10 @@
         <p class="logo">
           <img
             class="logo-primary"
-            src="dajana/D.H._Primary%20Logo-02.png"
+            src="assets/logo-primary.png"
             alt="Dajana Hoti logo"
+            width="600"
+            height="200"
           />
         </p>
         <p>© 2026 Dajana Hoti. All rights reserved.</p>
