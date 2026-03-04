@@ -448,7 +448,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .contact-actions .btn {
@@ -469,6 +469,10 @@ a {
   fill: currentColor;
 }
 
+.icon-btn svg.icon-line {
+  fill: none;
+}
+
 .btn.icon-btn {
   color: #111111;
 }
@@ -480,6 +484,52 @@ a {
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.4rem 0;
+}
+
+.thankyou-modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(9, 10, 14, 0.68);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 70;
+}
+
+.thankyou-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.thankyou-card {
+  width: min(560px, 100%);
+  background: #121722;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem 1.25rem 1.4rem;
+  position: relative;
+}
+
+.thankyou-card p:not(.section-label) {
+  margin-bottom: 1rem;
+}
+
+.thankyou-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
 }
 
 .footer-shell {
