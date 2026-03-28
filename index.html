@@ -33,6 +33,7 @@
       type="image/webp"
       fetchpriority="high"
     />
+    <link rel="preload" as="video" href="assets/vsl.mp4" type="video/mp4" />
     <link rel="icon" href="https://dajanahoti.com/favicon.ico" sizes="any" />
     <link
       rel="icon"
@@ -155,19 +156,37 @@
         />
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-          <p class="section-label">Brand Strategy & Social Media</p>
-          <h1>
-            Building Brands That
-            <em class="gold-text italic">Resonate</em>
-          </h1>
-          <p class="hero-copy">
-            With 5+ years of experience collaborating with national and
-            international companies, I craft brand direction and social systems
-            that build clarity, trust, and sustained growth.
-          </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn">Let's Work Together</a>
-            <a href="#services" class="btn btn-hollow">View Services</a>
+          <div class="hero-layout">
+            <div class="hero-copy-block">
+              <p class="section-label">Brand Strategy & Social Media</p>
+              <h1>
+                Building Brands That
+                <em class="gold-text italic">Resonate</em>
+              </h1>
+              <p class="hero-copy">
+                With 5+ years of experience collaborating with national and
+                international companies, I craft brand direction and social systems
+                that build clarity, trust, and sustained growth.
+              </p>
+              <div class="hero-actions">
+                <a href="#contact" class="btn">Let's Work Together</a>
+                <a href="#services" class="btn btn-hollow">View Services</a>
+              </div>
+            </div>
+            <div class="hero-media">
+              <video
+                class="hero-video"
+                id="heroVideo"
+                autoplay
+                muted
+                controls
+                loop
+                playsinline
+                preload="auto"
+              >
+                <source src="assets/vsl.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>
@@ -520,6 +539,21 @@
         document.addEventListener("keydown", function (event) {
           if (event.key === "Escape") closeModal();
         });
+      })();
+
+      (function () {
+        var heroVideo = document.getElementById("heroVideo");
+        if (!heroVideo) return;
+
+        heroVideo.muted = true;
+        heroVideo.defaultMuted = true;
+        heroVideo.volume = 0;
+
+        var playAttempt = heroVideo.play();
+
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(function () {});
+        }
       })();
     </script>
   </body>
