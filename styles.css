@@ -464,6 +464,26 @@ a {
   border: 1px solid var(--line);
 }
 
+.careers {
+  border-block: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.careers-inner {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.careers-inner h2 {
+  margin-bottom: 1.2rem;
+}
+
+.careers-inner > p:not(.section-label) {
+  max-width: 60ch;
+  margin: 0 auto 2rem;
+}
+
 .contact {
   border-top: 1px solid var(--line);
 }
