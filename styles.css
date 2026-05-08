@@ -464,6 +464,21 @@ a {
   border: 1px solid var(--line);
 }
 
+.faq-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 4rem;
+}
+
+.faq-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  margin: 0;
+}
+
 .careers {
   border-block: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.01);
@@ -650,6 +665,10 @@ a {
   }
 
   .process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
