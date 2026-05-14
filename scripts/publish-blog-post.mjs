@@ -20,7 +20,7 @@ function readJsonPayload() {
   }
 
   const event = JSON.parse(fs.readFileSync(eventPath, "utf8"));
-  if (event.client_payload) return event.client_payload;
+  if (event.client_payload) return event.client_payload.article || event.client_payload;
   if (event.inputs?.article_json) return JSON.parse(event.inputs.article_json);
 
   throw new Error("No article payload found. Send repository_dispatch.client_payload or workflow_dispatch input article_json.");
