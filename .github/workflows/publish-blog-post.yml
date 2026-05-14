@@ -1,0 +1,54 @@
+name: Publish automated blog post
+
+on:
+  repository_dispatch:
+    types: [publish_blog_post]
+  workflow_dispatch:
+    inputs:
+      article_json:
+        description: "Full article JSON payload"
+        required: true
+        type: string
+      overwrite_existing:
+        description: "Replace an existing post with the same slug"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Build static blog post
+        env:
+          ARTICLE_JSON: ${{ github.event.inputs.article_json || '' }}
+          OVERWRITE_EXISTING: ${{ github.event.inputs.overwrite_existing || 'false' }}
+        run: node scripts/publish-blog-post.mjs
+
+      - name: Commit and push article
+        run: |
+          if git diff --quiet -- blog sitemap.xml; then
+            echo "No blog changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog sitemap.xml
+          git commit -m "Publish automated blog post"
+          git push
